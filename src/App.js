@@ -2,9 +2,21 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import firebase from 'firebase';
 import reducers from './reducers';
+import constants from './constants';
 
 class App extends Component {
+    componentWillMount() {
+        firebase.initializeApp({
+            apiKey: constants.apiKey,
+            authDomain: constants.authDomain,
+            databaseURL: constants.databaseURL,
+            storageBucket: constants.storageBucket,
+            messagingSenderId: constants.messagingSenderId
+        });
+    };
+
     render() {
         return (
             <Provider store={createStore(reducers)} >

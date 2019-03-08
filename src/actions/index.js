@@ -1,6 +1,5 @@
 import { EMAIL_CHANGED, PASSWORD_CHANGED } from './types';
 import firebase from 'firebase';
-import console = require('console');
 
 export const emailChanged = (text) => {
     return {

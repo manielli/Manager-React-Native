@@ -16,7 +16,7 @@ class App extends Component {
             storageBucket: constants.storageBucket,
             messagingSenderId: constants.messagingSenderId
         });
-    };
+    }
 
     render() {
         return (
@@ -25,6 +25,6 @@ class App extends Component {
             </Provider>
         );
     }
-};
+}
 
 export default App;

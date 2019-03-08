@@ -16,7 +16,8 @@ class LoginForm extends Component {
                     <Input 
                         label="Email"
                         placeholder="email@gmail.com"
-                        onChangeText={this.emailChange.bind(this)}
+                        onChangeText={this.onEmailChange.bind(this)}
+                        value={this.props.email}
                     />
                 </CardSection>
 

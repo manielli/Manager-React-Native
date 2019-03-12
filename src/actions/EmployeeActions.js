@@ -49,6 +49,6 @@ export const employeeSave = ({ name, phone, shift, uid }) => {
             .database()
             .ref(`/users/${currentUser.uid}/employees/${uid}`)
             .set({ name, phone, shift })
-            .then(() => console.log('saved'));
+            .then(() => Actions.employeeList({ type: 'reset' }));
     };
 };

@@ -1,19 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Text, View, Modal } from 'react-native';
-import { CardSection } from './CardButton';
+import { CardSection } from './CardSection';
 import { Button } from './Button';
 
-const Confirm = ({ children }) => {
+const Confirm = ({ children, visible, onAccept, onDecline }) => {
     return (
-        <Modal>
+        <Modal
+            visbile={visible}
+            transparent
+            animationType="slide"
+            onRequestClose={() => {}}
+        >
             <View>
                 <CardSection>
                     <Text>{children}</Text>
                 </CardSection>
 
                 <CardSection>
-                    <Button>Yes</Button>
-                    <Button>No</Button>
+                    <Button onPress={onAccept} >Yes</Button>
+                    <Button onPress={onDecline} >No</Button>
                 </CardSection>
             </View>
         </Modal>
